@@ -60,10 +60,10 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "save")
-    public String save(@RequestParam String name, @RequestParam String email, @RequestParam String phone) {
+    public String save(@RequestParam String name, @RequestParam String salary) {
         Employees employee = new Employees();
         employee.setName(name);
-        employee.setSalary(email);
+        employee.setSalary(salary);
 
         String jsonEmployee = convertToJson(employee);
         Client client = createJerseyRestClient();
